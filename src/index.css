@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: rgb(1, 1, 31);
+}
+
+:root{
+  --WHITE: WHITE;
+  --DISPLAY: NONE;
+  --TEXTCENTER: CENTER;
+}
+/* toggle button stling */
+.show-nav a {
+  text-decoration: none;
+  display: none;
+  padding: 20px;
+}
+article{
+background-color: transparent;
+transition: all 0.3s ease-in-out;
+}
+article a{
+  display: block;
+  padding: 7px 0;
+  text-align: var(--TEXTCENTER);
+  font-weight: bold;
+}
+
+/* toggle button styling */
+
+@media screen and (min-width: 500px) {
+  .bi {
+    display: none;
+    color: var(--BGCOLOR);
+  }
+  article a{
+    display: none;
+  }
+}
