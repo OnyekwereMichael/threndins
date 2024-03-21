@@ -1,14 +1,41 @@
 import React from 'react'
+import card from "../assets/card.png"
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { cards } from "../components/mapped"
 
 function hero() {
   return (
     <section>
-          <h1 className='text-center text-white pt-24 text-4xl tracking-tight smm:pt-10'>Lorem ipsum dolor</h1>
-          <p className='text-center text-white mt-4 smm:text-sm smm:px-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> nemo culpa dicta sed temporibus magni aut ipsa eius</p>
-            <section className='flex  justify-center items-center'>
-                    <button className='text-white bg-blue-500 py-2 px-5 mr-5 mt-8 rounded'>Get Started</button>
-                    <button className='bg-white py-2 px-8 mr-5 mt-8 rounded'>Explore</button>
-            </section>
+    <h1 className='text-[#021C8B] text-center font-bold text-3xl mt-10'>Try Our Products</h1>
+             
+ <section className="mt-10 smm:flex-wrap">
+          <Swiper
+            spaceBetween={1}
+            slidesPerView={1}
+            breakpoints={{
+              540: {
+                slidesPerView: 1,
+              },
+              600: {
+                slidesPerView: 3,
+              },
+              1000: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {cards.map((item, ivx) => (
+              <div key={ivx}>
+                <SwiperSlide>
+                  <div className="swipers">
+                    <img src={item.img} alt="" />
+                  </div>
+                </SwiperSlide>
+              </div>
+            ))}
+          </Swiper>
+        </section>
     </section>
   )
 }
